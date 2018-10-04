@@ -4,17 +4,22 @@ I've been working as a Teaching Assistant for one of the intermediate programmin
 for a couple of years now. As a result, I interact with many students who come to me for help on difficult 
 assignments that they receive throughout the semester. Vanderbilt uses an "office hours" system, where all TAs have 
 weekly times where they sit in a designated location and students can stop by and ask questions. According to several 
-students, many of them are frustrated when they either don't know where to go to get help, or must wait in line to get help 
-and fix bugs in their code. This text message-based application solves both of these problems.  
+students, many of them are frustrated when they either don't know where to go to get help, or must wait in line for a long
+time to talk to a TA. This text message-based application solves both of these problems.  
 
 The primary interface of the service is through text messages. This ensures that everyone can use it without having to 
 download an app or consume a lot of data. In addition, a message-based interface makes the app more accessible and removes
-clutter. This application allows students to join an "office hours queue" for a particular class, or ask about the status of office hours in general by sending a text message with commands. A student can use the command "join <COURSE-NUMBER>"
+clutter. This application allows students to join an "office hours queue" for a particular class, or ask about the status of office hours in general by sending text messages with commands. A student can use the command "join <COURSE-NUMBER>" to join the 
+corresponding queue, or "info <COURSE-NUMBER>" to receive information on when and where office hours for a course are being
+held. The system will give replies to indicate success or failure via SMS, and allow instructors to view the queue directly,
+and pop people off as they are helped.
 
 Students currently need to go to physical classrooms and computer labs just to wait in line to be helped. On busy days,
 they might have to wait in line for upwards of 20 minutes to receive help. In addition, it can be difficult to physically locate
-an instructor in a crowded office hours environment, and know who to ask. The goal of this application is to streamline the
-process of getting help in any class, although it is designed with Computer Science classes in mind. 
+an instructor in a crowded office hours environment, and know who to ask. The environment itself can quickly become crowded
+and unorganized, which disincentivizes students from going in the first place. The goal of this application is to streamline the
+process of getting help in any class, although it is designed with Computer Science classes in mind. Phone numbers for this 
+system are provided by Twilio, and the backend runs on AWS. 
 
 
 
@@ -47,22 +52,22 @@ make sure things are right.
 ## Question 3:
 N: Usually 2 times when a large assignment is due that week.  
 R: 2 times, or more when there's a big exam coming up.  
-M: At most once a week, to clarify questions I have on my assignments
+M: At most once a week, to clarify questions I have on my assignments.
 
 ## Question 4:
 N: 1 hour, where I get help as soon as possible when I arrive but stay around in case I have other questions.  
 R: 2 hours, which is enough to do a solid chunk of my assignments.  
-M: 30-40 minutes, enough time to wait in line, then ask the questions I bring with me
+M: 30-40 minutes, enough time to wait in line, then ask the questions I bring with me.
 
 ## Question 5:
 N: 4-5 students who also stay around for a while.  
 R: 10 students who come and go while I'm at the computer lab.  
-M: Just a couple, unless it's right before an assignment is due but I usually avoid those times anyway
+M: Just a couple, unless it's right before an assignment is due but I usually avoid those times anyway.
 
 ## Question 6:
 N: 5-10 minutes  
-R: 10 minutes, but I've had to wait for 20 the day before an assignment is due. 
-M: 0-5 minutes, there's usually no one else there
+R: 10 minutes, but I've had to wait for 20 the day before an assignment is due.  
+M: 0-5 minutes, there's usually no one else there.
 
 ## Question 7:
 N: Instructors sometimes don't have good answers to my questions, and need to refer me to someone else.  
