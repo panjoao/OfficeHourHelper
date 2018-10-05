@@ -89,3 +89,53 @@ should also list office hours in a better place. No one else seems to know when 
 N: No, online services rarely have relevant material and are presented in a difficult to understand way.  
 R: No, I highly prefer being able to come in to ask about my specific problem, and easily ask follow-up questions.  
 M: No, lots of problems I have are hard to explain over text and email already works just fine.
+
+
+# Requirements
+
+Note: These Requirements came from a blend of my own experiences with Office Hours, both as a student and instructor, and
+students I've interviewed on the topic.
+
+Identified goals for the product:  
+  * Ability to physically come in and get help face-to-face
+    * Students have stated that an entirely virtual service would be no better than existing online tools like StackOverflow
+    * Courses want to discourage students from searching online for answers, which could lead to an honor code violation
+    * Many issues with programming assignments are difficult to describe without being able to actually see the code
+  * Viewing office hour schedules for many classes from the same interface
+    * Most students will take multiple difficult classes at the same time
+    * Students do not want to swap to a different service just to get the same result
+    * Should be easy to add the information of more classes, as professors (hopefully) decide to use the service
+  * Joining a "queue" to get help without having to be waiting in person
+    * Queue based approach is generally fair; first-come-first-served
+    * The current office hours system implicitly uses a queue, which is just not recorded anywhere
+    * Allow students to view how many others are currently in the queue before joining
+      * Students can decide whether queue is worth joining based on their time constraints
+    * Conserves space in the smaller office hours rooms, which frequently get filled up
+  * Notifications as the student's office hours appointment approaches
+    * Minimizes the risk of someone not showing up or otherwise forgetting to get help
+    * Saves the instructors' time having to track students down
+  * Ability for instructors to monitor the current queue and make adjustments
+    * Students will inevitably forget to show up or cancel their appointments
+    * Someone might have a very simple issue, which can be handled while waiting on another student
+    * Instructors should look out for abuse, or people using the system in bad faith (spam, etc.)
+  * Ability for instructors to shut down the queue and prevent more students from joining
+    * Office hour sessions will shut down at the end of each day
+    * The queue could get excessively long, to the point that instructors are not able to help everyone
+  * Ability for instructors to "pause" the queue for a selected period of time
+    * There could be a gap in office hours, in which we shouldn't mislead students into joining the queue
+  * Option for a student to gracefully exit the queue, and lose their spot
+    * Students may simply have to go to class or any other scheduled event
+    * Students may have an emergency come up which forces them to leave
+    * Students might figure out their problem on their own, and not need help anymore
+    * Helps save instructor resources; no need to manually remove everyone who wants to leave
+  * Ability for students to get an update on their spot in the queue
+    * Allows students to decide whether it's worth staying in line at a given time
+    * Provides some peace of mind in general to users, with an update on their status
+
+Other considered goals (which were ultimately rejected):  
+  * Allowing students to sign up for a particular time (ex. 4:00 PM on Wednesday)
+
+   
+# Development Approach
+   
+.... your approach here ....
