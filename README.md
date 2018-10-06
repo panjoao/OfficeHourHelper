@@ -130,12 +130,67 @@ Identified goals for the product:
     * Helps save instructor resources; no need to manually remove everyone who wants to leave
   * Ability for students to get an update on their spot in the queue
     * Allows students to decide whether it's worth staying in line at a given time
-    * Provides some peace of mind in general to users, with an update on their status
+    * Provides some peace of mind to users, with updates on their status
 
 Other considered goals (which were ultimately rejected):  
   * Allowing students to sign up for a particular time (ex. 4:00 PM on Wednesday)
+    * Would require a separate persistence structure from the underlying queue
+    * Instructors would need to use extra effort to make their appointments on time
+    * Students in the actual queue would be resentful at the appearance of others "jumping" in line
+    * Hard to predict how long an individual will need to get help; can range from seconds to more than 10 minutes
+  * Pulling information on office hours from Brightspace/Piazza
+    * Would require a large effort to get persmissions for all classes and make proper API calls
+    * Information is not presented in a persistent way between classes
+    * Instructor schedules are subject to change throughout the year
+    * System should be opt-in for a particular course, for which entering office hours can be a prerequisite
+  * Creating special "profiles" for students and instructors
+    * Unnecessary since phone numbers are unique and will not change
+    * Difficult to verify identities
+    * Would require significant, costly data storage as the system expands
 
-   
+
 # Development Approach
    
-.... your approach here ....
+The primary development approach will be Scrum (agile framework). This was chosen because it is the development practice 
+I am personally the most familiar with, having used it extensively in my summer internship. It also provides a nice division
+of the larger project into smaller tasks, and ensures that the team will stay on track. "Standups," while a bit unintuitive with a 
+team of only one developer, ensure that I will keep myself on track and not get lost in the details. Standups also provide a 
+designated period of time to keep track of my progress, and readjust my goals/priorities as needed. While a typical sprint in 
+a professional environment will last weeks, the sprints for this project will last just two days.  
+
+The requirements gathering for this project came primarily from my own observations of the way office hours currently work. Over 
+the past few years at Vanderbilt University, I've visited office hours to get help many times. Ever since last year when I started
+working as a Teaching Assistant, I've also had the opportunity to view office hours from another angle, and see how it could be
+improved for the instructors. In addition to my own experiences as a student, I had the opportunity to interview a few other 
+students who frequent office hours. They provided new perspectives on the current system, and gave me some unique ideas on how the
+system can be improved in the future.   
+
+There are many different ways this type of service could be implemented. It could be presented as a simple web-app with an 
+animated queue, allowing people to add themselves as needed. However, this would have introduced unnecessary complexity in 
+designing a GUI and acquiring a domain name. It could also be created as a mobile app for various smartphone platforms. However,
+mobile apps require larger development teams to create and maintain, and must be painstakingly configured for various sizes of 
+screens. Mobile apps also have a relatively high barrier to entry - no one wants to open the app store and download a special 
+app just to get a TA to explain a compiler error. The text-message based service is the best of both worlds, allowing users 
+to access the queue directly from their cellphones, while also running directly on pre-installed messaging applications.   
+
+Testing of this service will happen through a mixture of my own hard-coded stress tests, and asking various students to try
+the service from their own cell phones. This ensures that I can both be sure the service is functional, and get quick feedback 
+on any changes that should be made, even things as small as the phrasing on prompt messages. Testing will need to be done 
+iteratively and separately for each of the functions of the service, and from both the student and instructor points of view. I 
+will use the service on a small scale, with willing participants in my own office hours, to gather new test data every week and 
+iterate on the product itself. The same people who are willing to help me test can also decide whether the service has value
+to the average student. This constant feedback loop will prevent me from producing the wrong product, and allow me to (hopefully)
+validate assumptions that I made earlier in the design process.  
+
+Maintenance will occur iteratively as well. If the service is able to grow enough to become an integral part of the office hours
+experience, other developers may be willing to step in and make fixes once I graduate. In any case, the system will be designed
+so that each part of its functionality is distinct and well-commented. The use of a good architecture which provides clear 
+separation of concerns will make it much easier to fix, even if the original developer (me) is no longer working on the project.
+In particular, the parts of the system that parse and send messages should be separated, and the underlying queue should only
+be accessible in safe and well-defined ways.  
+
+In terms of estimates, this is an ambitious project to finish within two weeks. However, some aspects of it will be recycled
+from previous assignments (such as the ability to "parse" and "send" messages), and others will be provided by Clojure itself
+(such as the queue which underlies the entire system). As a result, my initial estimate is that the prototype will be 
+functional by the deadline. As the implementation progresses and I receive positive and negative feedback from my user testing,
+I will be prepared to reassess as needed.  
