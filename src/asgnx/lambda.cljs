@@ -75,7 +75,7 @@
                   :credentials-mgr     ssm/get-secrets!
                   :effect-handlers     (merge kvstore/action-handlers
                                               twilio/action-handlers)
-                  :state-mgr           (s3/s3-keystore "cs4278-asgnx-state-joaopan")}
+                  :state-mgr           (s3/s3-keystore "cs4278-asgnx-state-joaopan4")}
           resp   (<! (core/handle-message system from msg))]
 
         (println "Response: " resp)
