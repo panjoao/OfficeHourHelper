@@ -309,21 +309,9 @@
   (let [[course] (:args pmsg)]
     (get! state-mgr [course :queue])))
 
-;; Don't edit!
-(defn experts-on-topic-query [state-mgr pmsg]
-  (let [[topic]  (:args pmsg)]
-    (list! state-mgr [:expert topic])))
-
-;; Don't edit!
-(defn conversations-for-user-query [state-mgr pmsg]
-  (let [user-id (:user-id pmsg)]
-    (get! state-mgr [:conversations user-id])))
-
 ;; Edited to read the correct state depending on the command
 (def queries
-  {"expert" experts-on-topic-query
-   "ask"    experts-on-topic-query
-   "answer" conversations-for-user-query
+  {
    "join"   queue-of-class-query
    "pop"    queue-of-class-query
    "ta"     ta-of-class-query
